@@ -18,7 +18,8 @@ var indexRoutes             = require("./routes/index"),
     suggestionsRoutes       = require("./routes/suggestions");
 
 // APP CONFIG
-mongoose.connect("mongodb://localhost/qzvoice");
+mongoose.connect(process.env.DATABASEURL);
+
 // mongoose.connect("mongodb://leslie:grady@ds033056.mlab.com:33056/qzvoice");
 
 app.use(bodyParser.urlencoded({extended: true}));
