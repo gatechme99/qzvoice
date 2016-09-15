@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3><%= suggestion.title %></h3>
+                <h4> Submitted by: <%= suggestion.author.username %></h4>
+            </div>
+                    
+            <div class="panel-body"><%= suggestion.descr %></div>
+        </div>
+        
+        <div id="edit">
+            <% if(currentUser && suggestion.author.id.equals(currentUser._id)) { %>
+                <a href="/qzvoice/<%= suggestion._id %>/edit" class="btn btn-warning">Edit Suggestion</a>
+                <form id="delete-form" method="POST" action="/qzvoice/<%= suggestion._id %>?_method=DELETE">
+                    <button type="submit" class="btn btn-danger">Delete Suggestion</button>
+                </form>
+            <% } %>
+        </div>
+            
+        <div class="well">
+            <div class="text-right">
+                <a href="/qzvoice/<%= suggestion._id %>/comments/new" class="btn btn-primary">Add New Comment</a>
+            </div>
+            <hr>
+            <div>
+                <% suggestion.comments.forEach(function(comment){ %>
+                    <p><strong><%= comment.author.username %></strong> - <%= comment.text %></p>
+                    <div id="edit">
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                            <a class="btn btn-xs btn-warning" href="/qzvoice/<%=suggestion._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                            <form id="delete-form" action="/qzvoice/<%=suggestion._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                            </form>
+                        <% } %>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+<% include ../partials/footer %>

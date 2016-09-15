@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+    <div class="container">
+    
+        <div class="row">
+            
+            <div class="container">
+                <h4>I suggest you...</h4>
+            </div>
+            
+            <div class="container col-md-8">
+                <form action="/qzvoice" method="POST">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="suggestion[title]" placeholder="Enter your idea (e.g. 'Add the ability to...')" maxlength="140">
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea  class="form-control" rows="5" name="suggestion[descr]" placeholder="Describe your idea in more detail" maxlength="500"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+<% include ../partials/footer %>

@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container">
+                <header>
+                    <h1>QuartzVoice</h1>
+                </header>
+                    <h4>Your feedback drives our product process. Your votes count!</h4>
+                    <h4>Let us know what you want to see from the Quartz Product & Engineering Teams.</h4>
+                    <a href="/qzvoice/new" class="btn btn-primary btn-lg">New Idea</a>
+            </div>
+        </div>
+    
+        <% suggestions.forEach(function(suggestion){ %>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><a href="/qzvoice/<%= suggestion._id %>"><%= suggestion.title  %></a></h3>
+                </div>
+                <div class="panel-body">
+                    <div><%= suggestion.descr %></div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+<% include ../partials/footer %>
