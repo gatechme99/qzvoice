@@ -12,21 +12,17 @@
         </div>
     
         <% suggestions.forEach(function(suggestion){ %>
-            <div>
-                
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <button type="button" class="btn btn-default btn-lg">
-                    Vote
-                    <span class="glyphicon glyphicon-ok-circle"></span>
-                    </button>
-                    <h3 class="panel-title"><a href="/qzvoice/<%= suggestion._id %>"><%= suggestion.title  %></a></h3>
+            <li>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <button type="button" class="btn btn-default">VOTES<span class="badge">0</span></button>
+                        <h3 id="vote" class="panel-title"><%= suggestion.title  %></h3>
+                    </div>
+                    <div class="panel-body">
+                        <div><%= suggestion.descr.substring(0,200) %>. . . <a href="/qzvoice/<%= suggestion._id %>">READ MORE</a></div>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <div><%= suggestion.descr %></div>
-                </div>
-            </div>
+            </li>
         <% }); %>
     </div>
 <% include ../partials/footer %>
