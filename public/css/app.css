@@ -9,6 +9,18 @@ li {
     list-style-type: none;
 }
 
+.panel-body {
+    padding: 20px;
+}
+
+.panel-heading {
+    padding: 1px 20px 10px;
+}
+
+.comments {
+    padding: 1px;
+}
+
 .badge {
     left: 5px;
 }
@@ -20,6 +32,14 @@ li {
 .login {
     margin: 0 auto;
     float: none;
+}
+
+.well {
+    margin: 0;
+}
+
+h5 {
+    font-style: italic;
 }
 
 #delete-form {
