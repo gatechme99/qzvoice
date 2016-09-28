@@ -1,13 +1,11 @@
 <% include ../partials/header %>
-    <div class="container">
-    
+    <div class="container new-suggestion">
         <div class="row">
-            
-            <div class="container">
+            <div class="col-md-8 col-md-offset-2">
                 <h4>I suggest you...</h4>
             </div>
             
-            <div class="container col-md-8">
+            <div class="col-md-8 col-md-offset-2">
                 <form action="/qzvoice" method="POST">
                     <div class="form-group">
                         <input class="form-control" type="text" name="suggestion[title]" placeholder="Enter your idea (e.g. 'Add the ability to...')" maxlength="140">
@@ -22,7 +20,6 @@
                     </div>
                 </form>
             </div>
-            
         </div>
     </div>
 <% include ../partials/footer %>

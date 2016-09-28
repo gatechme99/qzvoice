@@ -9,6 +9,10 @@ li {
     list-style-type: none;
 }
 
+h5 {
+    font-style: italic;
+}
+
 .panel-body {
     padding: 20px;
 }
@@ -34,12 +38,22 @@ li {
     float: none;
 }
 
+.new-suggestion {
+    margin: 0 auto;
+    float: none;
+}
+
+.edit-suggestion {
+    margin: 0 auto;
+    float: none;
+}
+
 .well {
     margin: 0;
 }
 
-h5 {
-    font-style: italic;
+.vote-button {
+    margin-right: 10px;
 }
 
 #delete-form {
@@ -51,5 +65,10 @@ h5 {
 }
 
 #vote {
+    padding: 10px 20px;
+}
+
+#vote-title {
+    text-decoration: underline;
     display: inline;
 }
