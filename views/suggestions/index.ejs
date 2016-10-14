@@ -20,7 +20,8 @@
                 <li>
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <button type="button" class="btn btn-defauglt vote-button">VOTES<span class="badge">0</span></button>
+                            VOTES <input type="button" class="voteButton" value="0" />
+                            <!--<button type="button" class="btn btn-defauglt vote-button">VOTES<span class="badge">0</span></button>-->
                             <h3 id="vote-title" class="panel-title"><a href="/qzvoice/<%= suggestion._id %>"><%= suggestion.title  %></a></h3>
                         </div>
                         <div class="panel-body">
@@ -32,4 +33,22 @@
         </ul>
         
     </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $( document ).ready(function() {
+ 
+        	$('.voteButton').bind('click', function(){
+        		var initial = $(this).val();
+        		if(typeof $(this).data('counter') == "undefined"){
+        			$(this).data('counter',1); 
+        		}else{
+        			$(this).data('counter',$(this).data('counter')+1);
+        			initial = initial.substr(0,initial.indexOf('/'));
+        		}
+        
+        	$(this).val($(this).data('counter'));
+        	});
+     
+        });
+    </script>
 <% include ../partials/footer %>
